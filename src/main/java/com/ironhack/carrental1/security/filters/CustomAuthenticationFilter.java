@@ -73,13 +73,7 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
                 .withClaim("roles", user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
                 .sign(algorithm);
 
-//
-//        String access_token = JWT.create()
-//                .withSubject(user.getUsername())
-//                .withExpiresAt(new Date(System.currentTimeMillis() + 10 * 60 * 1000))
-//                .withIssuer(request.getRequestURL().toString())
-//                .withClaim("roles", user.getAuthorities().stream().map(GrantedAuthority::getAuthority).collect(Collectors.toList()))
-//                .sign(algorithm);
+
 
         // Creating a map with the generated token
         Map<String, String> tokens = new HashMap<>();

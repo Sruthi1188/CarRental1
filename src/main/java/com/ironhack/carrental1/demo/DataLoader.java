@@ -35,15 +35,15 @@ public class DataLoader implements CommandLineRunner {
 
 
         var sarahCustomer = customerService.create("Sarah", "Müller", "sarah@gmail.com");
-        customerService.create("Jane", "Doe", "jane@gmail.com");
-        customerService.create("Mark", "Bay", "mark@gmail.com");
-        customerService.create("Jo", "May", "jane@gmail.com");
+       var janeCustomer= customerService.create("Jane", "Doe", "jane@gmail.com");
+       var markCustomer = customerService.create("Mark", "Bay", "mark@gmail.com");
+        var joCustomer = customerService.create("Jo", "May", "jane@gmail.com");
 
 
         rentalService.addRental(LocalDate.of(2024, 4, 11), LocalDate.of(2024, 4, 15), sarahCustomer);
-        //  rentalService.addRental(LocalDate.of(2024,5,12),LocalDate.of(2024,5,13),"Jane");
-        // rentalService.addRental(LocalDate.of(2024,6,17),LocalDate.of(2024,6,21),"Mark");
-        // rentalService.addRental(LocalDate.of(2024,7,22),LocalDate.of(2024,7,25),"Jo");
+         rentalService.addRental(LocalDate.of(2024,5,12),LocalDate.of(2024,5,13),janeCustomer);
+         rentalService.addRental(LocalDate.of(2024,6,17),LocalDate.of(2024,6,22),markCustomer);
+        rentalService.addRental(LocalDate.of(2024,7,22),LocalDate.of(2024,7,25),joCustomer);
 
 
     }
